@@ -2234,10 +2234,15 @@ vertical-align: -.125em;
   <li><a href="#question-1-least-squares-and-matrix-calculations" id="toc-question-1-least-squares-and-matrix-calculations">Question 1 (Least squares and matrix calculations)</a></li>
   <li><a href="#solution-to-question-1" id="toc-solution-to-question-1">Solution to Question 1</a></li>
   <li><a href="#question-2-gaussian-likelihood-for-linear-regression" id="toc-question-2-gaussian-likelihood-for-linear-regression">Question 2 (Gaussian likelihood for linear regression)</a></li>
+  <li><a href="#solution-to-question-2" id="toc-solution-to-question-2">Solution to Question 2</a></li>
   <li><a href="#question-3-starting-values-in-nonconvex-optimization" id="toc-question-3-starting-values-in-nonconvex-optimization">Question 3 (Starting values in nonconvex optimization)</a></li>
+  <li><a href="#solution-to-question-3" id="toc-solution-to-question-3">Solution to Question 3</a></li>
   <li><a href="#question-4-nearly-collinear-predictors" id="toc-question-4-nearly-collinear-predictors">Question 4 (Nearly collinear predictors)</a></li>
+  <li><a href="#solution-to-question-4" id="toc-solution-to-question-4">Solution to Question 4</a></li>
   <li><a href="#question-5-data-preparation-and-summary-statistics" id="toc-question-5-data-preparation-and-summary-statistics">Question 5 (Data preparation and summary statistics)</a></li>
+  <li><a href="#solution-to-question-5" id="toc-solution-to-question-5">Solution to Question 5</a></li>
   <li><a href="#question-6-can-39-million-fitbit-records-represent-us-adults" id="toc-question-6-can-39-million-fitbit-records-represent-us-adults">Question 6 (Can 39 million Fitbit records represent US adults?)</a></li>
+  <li><a href="#solution-to-question-6" id="toc-solution-to-question-6">Solution to Question 6</a></li>
   </ul>
 </nav>
 <section id="question-1-least-squares-and-matrix-calculations" class="level2">
@@ -2392,6 +2397,97 @@ N_n\left(\mathbf X\boldsymbol\beta,\sigma^2\mathbf I_n\right).
 </annotation></semantics></math></p>
 <p>over a grid of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math> values from <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>1.25</mn></mrow><annotation encoding="application/x-tex">-1.25</annotation></semantics></math> to <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>1.25</mn><annotation encoding="application/x-tex">1.25</annotation></semantics></math>. State where the maximum occurs and explain why this agrees with the least-squares result.</p>
 </section>
+<section id="solution-to-question-2" class="level2">
+<h2 class="anchored" data-anchor-id="solution-to-question-2">Solution to Question 2</h2>
+<section id="a-1" class="level3">
+<h3 class="anchored" data-anchor-id="a-1">(a)</h3>
+<p>For fixed <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>σ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math>, the only part of the log-likelihood that depends on <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="bold-italic">𝜷</mi><annotation encoding="application/x-tex">\boldsymbol\beta</annotation></semantics></math> is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mfrac><mn>1</mn><mrow><mn>2</mn><msup><mi>σ</mi><mn>2</mn></msup></mrow></mfrac><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝒚</mi><mo>−</mo><mi mathvariant="bold-italic">𝑿</mi><mi mathvariant="bold-italic">𝜷</mi><msup><mo stretchy="false" form="postfix">)</mo><mi>T</mi></msup><mo stretchy="false" form="prefix">(</mo><mi mathvariant="bold-italic">𝒚</mi><mo>−</mo><mi mathvariant="bold-italic">𝑿</mi><mi mathvariant="bold-italic">𝜷</mi><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">
+-\frac{1}{2\sigma^2}
+(\mathbf y-\mathbf X\boldsymbol\beta)^T
+(\mathbf y-\mathbf X\boldsymbol\beta).
+</annotation></semantics></math></p>
+<p>Therefore, maximizing the log-likelihood is equivalent to minimizing the residual sum of squares. Thus,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover><mi mathvariant="bold-italic">𝜷</mi><mo accent="true">̂</mo></mover><mrow><mi mathvariant="normal">M</mi><mi mathvariant="normal">L</mi><mi mathvariant="normal">E</mi></mrow></msub><mo>=</mo><msub><mover><mi mathvariant="bold-italic">𝜷</mi><mo accent="true">̂</mo></mover><mrow><mi mathvariant="normal">L</mi><mi mathvariant="normal">S</mi></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\widehat{\boldsymbol\beta}_{\mathrm{MLE}}
+=
+\widehat{\boldsymbol\beta}_{\mathrm{LS}}.
+</annotation></semantics></math></p>
+<p>So the maximum-likelihood estimate of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="bold-italic">𝜷</mi><annotation encoding="application/x-tex">\boldsymbol\beta</annotation></semantics></math> is the same least-squares estimate calculated in Question 1.</p>
+</section>
+<section id="b-1" class="level3">
+<h3 class="anchored" data-anchor-id="b-1">(b)</h3>
+<p>For fixed <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="bold-italic">𝜷</mi><annotation encoding="application/x-tex">\boldsymbol\beta</annotation></semantics></math>, differentiate the log-likelihood with respect to <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>σ</mi><mn>2</mn></msup><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math>:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>∂</mi><mi>ℓ</mi></mrow><mrow><mi>∂</mi><msup><mi>σ</mi><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mi>−</mi><mfrac><mi>n</mi><mrow><mn>2</mn><msup><mi>σ</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><mfrac><mrow><mi mathvariant="normal">R</mi><mi mathvariant="normal">S</mi><mi mathvariant="normal">S</mi></mrow><mrow><mn>2</mn><mo stretchy="false" form="prefix">(</mo><msup><mi>σ</mi><mn>2</mn></msup><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\frac{\partial \ell}{\partial \sigma^2}
+=
+-\frac{n}{2\sigma^2}
++
+\frac{\mathrm{RSS}}{2(\sigma^2)^2}.
+</annotation></semantics></math></p>
+<p>Setting this equal to zero gives</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mrow><mi mathvariant="normal">M</mi><mi mathvariant="normal">L</mi><mi mathvariant="normal">E</mi></mrow><mn>2</mn></msubsup><mo>=</mo><mfrac><mrow><mi mathvariant="normal">R</mi><mi mathvariant="normal">S</mi><mi mathvariant="normal">S</mi></mrow><mi>n</mi></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\widehat{\sigma}^2_{\mathrm{MLE}}
+=
+\frac{\mathrm{RSS}}{n}.
+</annotation></semantics></math></p>
+<p>Calculate the MLE and the unbiased estimate:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>RSS <span class="ot">&lt;-</span> <span class="fu">sum</span>(r<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>sigma2_mle <span class="ot">&lt;-</span> RSS <span class="sc">/</span> n</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>sigma2_unbiased <span class="ot">&lt;-</span> RSS <span class="sc">/</span> (n <span class="sc">-</span> <span class="fu">qr</span>(X)<span class="sc">$</span>rank)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>sigma2_mle</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.4574759</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>sigma2_unbiased</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.4866765</code></pre>
+</div>
+</div>
+<p>The MLE is approximately <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0.4575</mn><annotation encoding="application/x-tex">0.4575</annotation></semantics></math>, while the unbiased estimate is approximately <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0.4867</mn><annotation encoding="application/x-tex">0.4867</annotation></semantics></math>. The MLE divides by <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">n=100</annotation></semantics></math>, while the unbiased estimate divides by <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mn>6</mn><mo>=</mo><mn>94</mn></mrow><annotation encoding="application/x-tex">n-6=94</annotation></semantics></math> because six regression coefficients were estimated from the data. The smaller denominator corrects for the degrees of freedom used to estimate these coefficients.</p>
+</section>
+<section id="c-1" class="level3">
+<h3 class="anchored" data-anchor-id="c-1">(c)</h3>
+<p>Vary only the coefficient of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mn>2</mn></msub><annotation encoding="application/x-tex">x_2</annotation></semantics></math> around its least-squares estimate:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>e_x2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>t_grid <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="fl">1.25</span>, <span class="fl">1.25</span>, <span class="at">length.out =</span> <span class="dv">501</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>loglik <span class="ot">&lt;-</span> <span class="cf">function</span>(t) {</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  beta_t <span class="ot">&lt;-</span> beta_hat <span class="sc">+</span> t <span class="sc">*</span> e_x2</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  residual_t <span class="ot">&lt;-</span> y <span class="sc">-</span> X <span class="sc">%*%</span> beta_t</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span>n <span class="sc">/</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">log</span>(<span class="dv">2</span> <span class="sc">*</span> pi <span class="sc">*</span> sigma2_mle) <span class="sc">-</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sum</span>(residual_t<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> sigma2_mle)</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>loglik_values <span class="ot">&lt;-</span> <span class="fu">sapply</span>(t_grid, loglik)</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>  t_grid, loglik_values,</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">&quot;l&quot;</span>,</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">&quot;t&quot;</span>,</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">&quot;Log-likelihood&quot;</span></span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img role="img" src="data:image/png;base64,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" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>t_grid[<span class="fu">which.max</span>(loglik_values)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+</div>
+<p>The maximum occurs at <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">t=0</annotation></semantics></math>. This means that moving the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>x</mi><mn>2</mn></msub><annotation encoding="application/x-tex">x_2</annotation></semantics></math> coefficient away from its least-squares estimate decreases the log-likelihood. This agrees with part (a), since the least-squares estimate is also the maximum-likelihood estimate of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="bold-italic">𝜷</mi><annotation encoding="application/x-tex">\boldsymbol\beta</annotation></semantics></math>.</p>
+</section>
+</section>
 <section id="question-3-starting-values-in-nonconvex-optimization" class="level2">
 <h2 class="anchored" data-anchor-id="question-3-starting-values-in-nonconvex-optimization">Question 3 (Starting values in nonconvex optimization)</h2>
 <p>Consider the function</p>
@@ -2407,6 +2503,79 @@ f&#39;(x)=1.5\exp(1.5x)-6(x+6)-0.15x^2.
 <li><p>Use BFGS to minimize <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math> twice, starting at <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mrow><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow></msup><mo>=</mo><mi>−</mi><mn>15</mn></mrow><annotation encoding="application/x-tex">x^{(0)}=-15</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>x</mi><mrow><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo stretchy="false" form="postfix">)</mo></mrow></msup><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x^{(0)}=0</annotation></semantics></math>. Supply <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>f</mi><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">f&#39;(x)</annotation></semantics></math> to the optimizer. For each run, report the final value of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>x</mi><annotation encoding="application/x-tex">x</annotation></semantics></math>, the final objective value, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">|</mo><msup><mi>f</mi><mo>′</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>x</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo></mrow><annotation encoding="application/x-tex">|f&#39;(x)|</annotation></semantics></math>, and whether the optimizer reported convergence.</p></li>
 <li><p>Explain why the two runs can converge to different answers. Which run gives the lower objective value? What additional evidence would be needed before claiming that this point is the global minimum?</p></li>
 </ol>
+</section>
+<section id="solution-to-question-3" class="level2">
+<h2 class="anchored" data-anchor-id="solution-to-question-3">Solution to Question 3</h2>
+<section id="a-2" class="level3">
+<h3 class="anchored" data-anchor-id="a-2">(a)</h3>
+<p>Define the objective function and its derivative, and plot the objective over the requested interval:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">exp</span>(<span class="fl">1.5</span> <span class="sc">*</span> x) <span class="sc">-</span> <span class="dv">3</span> <span class="sc">*</span> (x <span class="sc">+</span> <span class="dv">6</span>)<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="fl">0.05</span> <span class="sc">*</span> x<span class="sc">^</span><span class="dv">3</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>f_prime <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="fl">1.5</span> <span class="sc">*</span> <span class="fu">exp</span>(<span class="fl">1.5</span> <span class="sc">*</span> x) <span class="sc">-</span> <span class="dv">6</span> <span class="sc">*</span> (x <span class="sc">+</span> <span class="dv">6</span>) <span class="sc">-</span> <span class="fl">0.15</span> <span class="sc">*</span> x<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>x_grid <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">40</span>, <span class="dv">7</span>, <span class="at">length.out =</span> <span class="dv">1000</span>)</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>  x_grid, <span class="fu">f</span>(x_grid),</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">&quot;l&quot;</span>,</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">&quot;x&quot;</span>,</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">&quot;f(x)&quot;</span></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABUAAAAPACAMAAADDuCPrAAAAyVBMVEUAAAAAADoAAGYAOjoAOmYAOpAAZrY6AAA6OgA6Ojo6OmY6OpA6ZmY6ZpA6ZrY6kNtmAABmADpmOgBmOjpmOmZmZmZmZpBmkLZmkNtmtttmtv+QOgCQOjqQZjqQZmaQkDqQkLaQtraQttuQtv+Q2/+2ZgC2Zjq2kGa2kJC2kLa2tpC2tra2ttu227a229u22/+2///bkDrbkGbbkJDbtmbbtpDbtrbb25Db27bb29vb2//b////tmb/25D/27b/29v//7b//9v///8xrAjrAAAACXBIWXMAAB2HAAAdhwGP5fFlAAAfRElEQVR4nO3dbXsTB5ag4XKaxKFnCCwZNxMyzEzY0OzGWYhnQxYmxo30/3/UqiRbb64X11GVrTp13x9yga9Y+EjoQSWVjoo5ACHFQ/8AAGMloABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKECSgAEECChAkoABBAgoQJKAAQQIKEHTcAS0AetN/onq/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" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The plot shows that the objective is nonconvex, with multiple local extrema. In particular, there are two local minima separated by a local maximum. Therefore, the result of numerical optimization may depend on the starting value.</p>
+</section>
+<section id="b-2" class="level3">
+<h3 class="anchored" data-anchor-id="b-2">(b)</h3>
+<p>Run BFGS from the two requested starting values:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>run_bfgs <span class="ot">&lt;-</span> <span class="cf">function</span>(start) {</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  fit <span class="ot">&lt;-</span> <span class="fu">optim</span>(</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">par =</span> start,</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">fn =</span> f,</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">gr =</span> f_prime,</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">method =</span> <span class="st">&quot;BFGS&quot;</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">start =</span> start,</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">x_final =</span> fit<span class="sc">$</span>par,</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">objective =</span> fit<span class="sc">$</span>value,</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">abs_gradient =</span> <span class="fu">abs</span>(<span class="fu">f_prime</span>(fit<span class="sc">$</span>par)),</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">convergence =</span> fit<span class="sc">$</span>convergence</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">rbind</span>(</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">run_bfgs</span>(<span class="sc">-</span><span class="dv">15</span>),</span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">run_bfgs</span>(<span class="dv">0</span>)</span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>results</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  start    x_final objective abs_gradient convergence
+1   -15 -32.649111 -390.3858 8.725087e-08           0
+2     0   2.349967 -175.8626 6.556057e-07           0</code></pre>
+</div>
+</div>
+<p>Starting at <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mi>−</mi><mn>15</mn></mrow><annotation encoding="application/x-tex">x=-15</annotation></semantics></math> leads to approximately <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mi>−</mi><mn>32.65</mn></mrow><annotation encoding="application/x-tex">x=-32.65</annotation></semantics></math>, with an objective value near <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>390.39</mn></mrow><annotation encoding="application/x-tex">-390.39</annotation></semantics></math>. Starting at <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x=0</annotation></semantics></math> leads to approximately <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mn>2.35</mn></mrow><annotation encoding="application/x-tex">x=2.35</annotation></semantics></math>, with an objective value near <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>−</mi><mn>175.86</mn></mrow><annotation encoding="application/x-tex">-175.86</annotation></semantics></math>. In both cases, the gradient is close to zero and a convergence code of 0 indicates successful convergence.</p>
+</section>
+<section id="c-2" class="level3">
+<h3 class="anchored" data-anchor-id="c-2">(c)</h3>
+<p>The two runs converge to different answers because the objective function is nonconvex and contains more than one local minimum. BFGS is a local optimization method, so its result can depend on the starting value.</p>
+<p>The run starting at <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mi>−</mi><mn>15</mn></mrow><annotation encoding="application/x-tex">x=-15</annotation></semantics></math> gives the lower objective value. However, finding a lower local minimum does not by itself prove that it is the global minimum. Additional evidence, such as examining the objective over a wider range or identifying all stationary points and the behavior of the function in the tails, would be needed.</p>
+</section>
 </section>
 <section id="question-4-nearly-collinear-predictors" class="level2">
 <h2 class="anchored" data-anchor-id="question-4-nearly-collinear-predictors">Question 4 (Nearly collinear predictors)</h2>
@@ -2442,6 +2611,90 @@ u_i\overset{\mathrm{iid}}{\sim}N(0,1),
 </annotation></semantics></math></p>
 <p>to explain why the fitted values change very little while the two coefficients change substantially. What does this example suggest about interpreting separate effects for nearly collinear predictors?</p>
 </section>
+<section id="solution-to-question-4" class="level2">
+<h2 class="anchored" data-anchor-id="solution-to-question-4">Solution to Question 4</h2>
+<section id="a-3" class="level3">
+<h3 class="anchored" data-anchor-id="a-3">(a)</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">43202</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>u <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>x6 <span class="ot">&lt;-</span> X[, <span class="dv">2</span>] <span class="sc">+</span> <span class="fl">1e-4</span> <span class="sc">*</span> u</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>X_plus <span class="ot">&lt;-</span> <span class="fu">cbind</span>(X, x6)</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>fit_X <span class="ot">&lt;-</span> <span class="fu">lm.fit</span>(<span class="at">x =</span> X, <span class="at">y =</span> y)</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>fit_plus <span class="ot">&lt;-</span> <span class="fu">lm.fit</span>(<span class="at">x =</span> X_plus, <span class="at">y =</span> y)</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Condition numbers and RMSE</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">design =</span> <span class="fu">c</span>(<span class="st">&quot;X&quot;</span>, <span class="st">&quot;X_plus&quot;</span>),</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">condition_number =</span> <span class="fu">c</span>(<span class="fu">kappa</span>(X, <span class="at">exact =</span> <span class="cn">TRUE</span>), <span class="fu">kappa</span>(X_plus, <span class="at">exact =</span> <span class="cn">TRUE</span>)),</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">RMSE =</span> <span class="fu">c</span>(<span class="fu">sqrt</span>(<span class="fu">mean</span>(fit_X<span class="sc">$</span>residuals<span class="sc">^</span><span class="dv">2</span>)), <span class="fu">sqrt</span>(<span class="fu">mean</span>(fit_plus<span class="sc">$</span>residuals<span class="sc">^</span><span class="dv">2</span>)))</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  design condition_number      RMSE
+1      X         1.524914 0.6763696
+2 X_plus     20209.203501 0.6754668</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Coefficients of x1 and x6 from X_plus fit</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">coefficient =</span> <span class="fu">c</span>(<span class="st">&quot;x1&quot;</span>, <span class="st">&quot;x6&quot;</span>),</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">estimate =</span> <span class="fu">unname</span>(fit_plus<span class="sc">$</span>coefficients[<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">7</span>)])</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  coefficient  estimate
+1          x1  351.6766
+2          x6 -350.2588</code></pre>
+</div>
+</div>
+</section>
+<section id="b-3" class="level3">
+<h3 class="anchored" data-anchor-id="b-3">(b)</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>y_star <span class="ot">&lt;-</span> y <span class="sc">+</span> <span class="fl">1e-3</span> <span class="sc">*</span> u</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>fit_star <span class="ot">&lt;-</span> <span class="fu">lm.fit</span>(<span class="at">x =</span> X_plus, <span class="at">y =</span> y_star)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>coef_star <span class="ot">&lt;-</span> fit_star<span class="sc">$</span>coefficients</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>coef_change <span class="ot">&lt;-</span> coef_star <span class="sc">-</span> fit_plus<span class="sc">$</span>coefficients</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Coefficient changes for x1 and x6</span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">coefficient =</span> <span class="fu">c</span>(<span class="st">&quot;x1&quot;</span>, <span class="st">&quot;x6&quot;</span>),</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">original =</span> fit_plus<span class="sc">$</span>coefficients[<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">7</span>)],</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">new =</span> coef_star[<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">7</span>)],</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">change =</span> coef_change[<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">7</span>)]</span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   coefficient  original       new change
+            x1  351.6766  341.6766    -10
+x6          x6 -350.2588 -340.2588     10</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare fitted values</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>fitted_plus <span class="ot">&lt;-</span> X_plus <span class="sc">%*%</span> fit_plus<span class="sc">$</span>coefficients</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>fitted_star <span class="ot">&lt;-</span> X_plus <span class="sc">%*%</span> coef_star</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>fitted_difference <span class="ot">&lt;-</span> fitted_star <span class="sc">-</span> fitted_plus</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">RMSE_difference =</span> <span class="fu">sqrt</span>(<span class="fu">mean</span>(fitted_difference<span class="sc">^</span><span class="dv">2</span>)),</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">max_absolute_difference =</span> <span class="fu">max</span>(<span class="fu">abs</span>(fitted_difference))</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  RMSE_difference max_absolute_difference
+1     0.001015879             0.002572675</code></pre>
+</div>
+</div>
+</section>
+<section id="c-3" class="level3">
+<h3 class="anchored" data-anchor-id="c-3">(c)</h3>
+<p>The small change from <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi mathvariant="bold-italic">𝒚</mi><annotation encoding="application/x-tex">\mathbf y</annotation></semantics></math> to <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="bold-italic">𝒚</mi><mo>⋆</mo></msup><mo>=</mo><mi mathvariant="bold-italic">𝒚</mi><mo>+</mo><msup><mn>10</mn><mrow><mi>−</mi><mn>3</mn></mrow></msup><mi mathvariant="bold-italic">𝒖</mi></mrow><annotation encoding="application/x-tex">\mathbf y^\star = \mathbf y + 10^{-3}\mathbf u</annotation></semantics></math> can be explained by the relationship:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="bold-italic">𝒚</mi><mo>⋆</mo></msup><mo>−</mo><mi mathvariant="bold-italic">𝒚</mi><mo>=</mo><msup><mn>10</mn><mrow><mi>−</mi><mn>3</mn></mrow></msup><mi mathvariant="bold-italic">𝒖</mi><mo>=</mo><mn>10</mn><mo stretchy="false" form="prefix">(</mo><msub><mi mathvariant="bold-italic">𝒙</mi><mn>6</mn></msub><mo>−</mo><msub><mi mathvariant="bold-italic">𝒙</mi><mn>1</mn></msub><mo stretchy="false" form="postfix">)</mo><mi>.</mi></mrow><annotation encoding="application/x-tex">\mathbf y^\star - \mathbf y = 10^{-3}\mathbf u = 10(\mathbf x_6 - \mathbf x_1).</annotation></semantics></math></p>
+<p>This means the response changed by exactly 10 times the difference between the two nearly collinear predictors. Since <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="bold-italic">𝒙</mi><mn>6</mn></msub><annotation encoding="application/x-tex">\mathbf x_6</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="bold-italic">𝒙</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\mathbf x_1</annotation></semantics></math> are nearly identical, the model can represent this small change by decreasing the coefficient of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="bold-italic">𝒙</mi><mn>1</mn></msub><annotation encoding="application/x-tex">\mathbf x_1</annotation></semantics></math> by approximately 10 and increasing the coefficient of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi mathvariant="bold-italic">𝒙</mi><mn>6</mn></msub><annotation encoding="application/x-tex">\mathbf x_6</annotation></semantics></math> by approximately 10. These large but opposite coefficient changes mostly cancel when computing fitted values <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="bold-italic">𝑿</mi><mo>+</mo></msub><mover><mi mathvariant="bold-italic">𝜷</mi><mo accent="true">̂</mo></mover></mrow><annotation encoding="application/x-tex">\mathbf X_+\widehat{\boldsymbol\beta}</annotation></semantics></math>, so predictions remain stable.</p>
+<p>This demonstrates a fundamental problem with nearly collinear predictors: individual coefficient estimates can be highly unstable and subject to large swings from small data perturbations, even when the fitted values remain stable. Therefore, when predictors are nearly collinear, interpretation of separate effects for each predictor should be done with considerable caution. The individual coefficients may not be reliable, but linear combinations of coefficients (like fitted values) can still be well-estimated.</p>
+</section>
+</section>
 <section id="question-5-data-preparation-and-summary-statistics" class="level2">
 <h2 class="anchored" data-anchor-id="question-5-data-preparation-and-summary-statistics">Question 5 (Data preparation and summary statistics)</h2>
 <p>The file <code>data/data-manipulation.csv</code> is a small constructed data table containing an observation identifier, a group label, two numeric predictors, and a response. Some response values are missing. For analyses involving the response, use only observations with a recorded response. Do not replace a missing response with zero or a group mean.</p>
@@ -2455,6 +2708,109 @@ u_i\overset{\mathrm{iid}}{\sim}N(0,1),
 <li><p>For each group, report the number of observations, the mean response, and the mean of <code>feature_sum</code>. State clearly which observations these summaries describe.</p></li>
 <li><p>Sort the analysis table by response from largest to smallest and report the first three rows, including <code>observation_id</code>, <code>group</code>, <code>response</code>, and <code>feature_sum</code>. Add code checks verifying that the number of retained rows equals the number of nonmissing responses in the original data, that the analysis table has no missing response values, and that its identifiers are unique.</p></li>
 </ol>
+</section>
+<section id="solution-to-question-5" class="level2">
+<h2 class="anchored" data-anchor-id="solution-to-question-5">Solution to Question 5</h2>
+<section id="a-4" class="level3">
+<h3 class="anchored" data-anchor-id="a-4">(a)</h3>
+<p>Read the data and inspect its dimensions, column types, duplicated identifiers, and missing values:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/data-manipulation.csv&quot;</span>)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(dat)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 24  5</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(dat, class)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>observation_id          group             x1             x2       response 
+   &quot;character&quot;    &quot;character&quot;      &quot;numeric&quot;      &quot;numeric&quot;      &quot;numeric&quot; </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">duplicated</span>(dat<span class="sc">$</span>observation_id))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colSums</span>(<span class="fu">is.na</span>(dat))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>observation_id          group             x1             x2       response 
+             0              0              0              0              3 </code></pre>
+</div>
+</div>
+<p>The original data have 24 observations and 5 variables. <code>observation_id</code> and <code>group</code> are character variables, while <code>x1</code>, <code>x2</code>, and <code>response</code> are numeric. There are no duplicated identifiers, and only <code>response</code> has missing values, with 3 missing observations.</p>
+<p>For analyses involving the response, retain only observations with a recorded response and create <code>feature_sum</code>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>analysis <span class="ot">&lt;-</span> dat[<span class="sc">!</span><span class="fu">is.na</span>(dat<span class="sc">$</span>response), ]</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>analysis<span class="sc">$</span>feature_sum <span class="ot">&lt;-</span> analysis<span class="sc">$</span>x1 <span class="sc">+</span> analysis<span class="sc">$</span>x2</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(analysis)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 21  6</code></pre>
+</div>
+</div>
+<p>Thus, <code>analysis</code> contains only observations for which the response is observed. Missing response values are excluded rather than replaced.</p>
+</section>
+<section id="b-4" class="level3">
+<h3 class="anchored" data-anchor-id="b-4">(b)</h3>
+<p>Calculate the requested summary statistics separately for each group:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>group_summary <span class="ot">&lt;-</span> <span class="fu">do.call</span>(</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  rbind,</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lapply</span>(<span class="fu">split</span>(analysis, analysis<span class="sc">$</span>group), <span class="cf">function</span>(d) {</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">data.frame</span>(</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">n =</span> <span class="fu">nrow</span>(d),</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">mean_response =</span> <span class="fu">mean</span>(d<span class="sc">$</span>response),</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">mean_feature_sum =</span> <span class="fu">mean</span>(d<span class="sc">$</span>feature_sum)</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>group_summary</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  n mean_response mean_feature_sum
+A 7      5.600000         3.600000
+B 7      7.602857         4.928571
+C 7      7.997143         6.585714</code></pre>
+</div>
+</div>
+<p>These summaries describe only the observations retained in the analysis table, meaning observations with nonmissing response values. The number of observations, mean response, and mean <code>feature_sum</code> are calculated separately within each group.</p>
+</section>
+<section id="c-4" class="level3">
+<h3 class="anchored" data-anchor-id="c-4">(c)</h3>
+<p>Sort the analysis table from the largest response to the smallest and report the first three observations:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>sorted_analysis <span class="ot">&lt;-</span> analysis[<span class="fu">order</span>(analysis<span class="sc">$</span>response, <span class="at">decreasing =</span> <span class="cn">TRUE</span>), ]</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>top_three <span class="ot">&lt;-</span> sorted_analysis[</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">&quot;observation_id&quot;</span>, <span class="st">&quot;group&quot;</span>, <span class="st">&quot;response&quot;</span>, <span class="st">&quot;feature_sum&quot;</span>)</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>top_three</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   observation_id group response feature_sum
+22         obs-22     C     9.24         6.6
+16         obs-16     B     9.00         5.2
+14         obs-14     B     8.66         5.0</code></pre>
+</div>
+</div>
+<p>Finally, verify that the analysis table was constructed correctly:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(analysis) <span class="sc">==</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(dat<span class="sc">$</span>response))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span><span class="fu">any</span>(<span class="fu">is.na</span>(analysis<span class="sc">$</span>response))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anyDuplicated</span>(analysis<span class="sc">$</span>observation_id) <span class="sc">==</span> <span class="dv">0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+<p>The first confirms that every observation with a recorded response was retained, the second confirms that no missing responses remain in the analysis table, and the third confirms that the retained observation identifiers are unique.</p>
+</section>
 </section>
 <section id="question-6-can-39-million-fitbit-records-represent-us-adults" class="level2">
 <h2 class="anchored" data-anchor-id="question-6-can-39-million-fitbit-records-represent-us-adults">Question 6 (Can 39 million Fitbit records represent US adults?)</h2>
@@ -2481,6 +2837,21 @@ u_i\overset{\mathrm{iid}}{\sim}N(0,1),
 <section id="source" class="level3">
 <h3 class="anchored" data-anchor-id="source">Source</h3>
 <p>Patten, T., Preble, E. A., Master, H., et al. (2026). <a href="https://doi.org/10.1038/s41591-026-04352-3">The All of Us Research Program’s wearables dataset</a>. <em>Nature Medicine</em>, 32, 2302-2310.</p>
+</section>
+</section>
+<section id="solution-to-question-6" class="level2">
+<h2 class="anchored" data-anchor-id="solution-to-question-6">Solution to Question 6</h2>
+<section id="a-5" class="level3">
+<h3 class="anchored" data-anchor-id="a-5">(a)</h3>
+<p>The 39 million daily records are not independent because many records come from the same participants. Some people may wear their Fitbit regularly, while others may forget to wear it or use it only occasionally. Therefore, participants who contribute more recorded days receive more weight when all daily records are averaged together.</p>
+</section>
+<section id="b-5" class="level3">
+<h3 class="anchored" data-anchor-id="b-5">(b)</h3>
+<p>No. The higher median step count among BYOD participants does not show that owning a Fitbit caused them to walk more. People who already owned a Fitbit may have bought it because they were already more interested in exercise or tracking their activity. In contrast, WEAR participants received a Fitbit through the study and may not have had the same motivation or habits before joining.</p>
+</section>
+<section id="c-5" class="level3">
+<h3 class="anchored" data-anchor-id="c-5">(c)</h3>
+<p>The dataset can still be biased even though it is very large. The participants may not represent all US adults because people who choose to participate and share wearable data may be more interested in health or exercise than the general population. In addition, the recorded days may also be selective because participants may wear the Fitbit more consistently on some days than others. Therefore, averaging all recorded daily step counts can give more weight to certain participants and certain types of days, so it may not estimate the mean activity of US adults accurately.</p>
 </section>
 </section>
 
